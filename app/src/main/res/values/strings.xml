@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Utiliter</string>
+    <string name="showtoast">ShowToast</string>
+    <string name="hide_dialog">Hide Dialog</string>
+    <string name="show_dialog">Show Dialog</string>
+    <string name="updateresource">UpdateResource</string>
+    <string name="showerrortoast">ShowErrorToast</string>
+</resources>

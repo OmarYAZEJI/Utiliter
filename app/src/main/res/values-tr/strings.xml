@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Utiliter</string>
+    <string name="showtoast">Toast Göster</string>
+    <string name="hide_dialog">Toast Gösterme</string>
+    <string name="show_dialog">Dialog Göster</string>
+    <string name="updateresource">Dil değiştir</string>
+    <string name="showerrortoast">Error Göster</string>
+</resources>
