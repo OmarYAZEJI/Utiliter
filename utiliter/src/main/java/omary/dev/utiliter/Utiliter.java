@@ -106,7 +106,7 @@ public class Utiliter {
         }
     }
 
-    /*ToDo: Show Dialoq Box */
+    /*ToDo: Show Dialog Box */
     public static void ShowDialogBox(Context ctx, String message, String title) {
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(ctx);
         builderSingle.setCancelable(false);
@@ -133,7 +133,6 @@ public class Utiliter {
     public static void deleteAppData(Context ctx) {
         try {
             Runtime.getRuntime().exec("pm clear " + ctx.getPackageName());
-
         } catch (Exception e) {
             e.printStackTrace();
         }
