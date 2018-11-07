@@ -140,7 +140,7 @@ public class Utiliter {
     }
 
     /*ToDo: Generate Notification */
-    public static void GenerateNotification(Context c, String message, String title, boolean IsAutoCancel) {
+    public static void Notify(Context c, String message, String title, boolean IsAutoCancel) {
         int notificationId = new Random().nextInt(60000);
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

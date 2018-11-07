@@ -33,4 +33,8 @@ public class MainActivity extends AppCompatActivity {
     public void UpdateResource(View view){
         Utiliter.updateResources(this,"tr");
     }
+
+    public void DoNotify(View view){
+        Utiliter.Notify(this,"Hello","Test",false);
+    }
 }
