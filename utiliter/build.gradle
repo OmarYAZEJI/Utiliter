@@ -48,7 +48,7 @@ ext {
     siteUrl = 'https://github.com/OmarYAZEJI/Utiliter'
     gitUrl = 'https://github.com/OmarYAZEJI/Utiliter.git'
 
-    libraryVersion = '0.0.1'
+    libraryVersion = '0.0.2'
 
     developerId = 'omary'
     developerName = 'Omar YAZEJI'
