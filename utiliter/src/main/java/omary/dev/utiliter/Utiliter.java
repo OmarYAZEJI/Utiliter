@@ -15,6 +15,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
 
@@ -33,19 +34,19 @@ public class Utiliter {
     static ProgressDialog dialog;
 
     /*ToDo: To display an alert with text message*/
-    public static void Toast(Context context, String message) {
+    public static void Toast(@NonNull Context context, String message) {
         Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
         toast.show();
     }
 
     /*ToDo: To display an error alert with text message*/
-    public static void ShowErrorToast(Context context, String message) {
+    public static void ShowErrorToast(@NonNull Context context, String message) {
         Toast toast = Toast.makeText(context, "Error: " + " " + message, Toast.LENGTH_SHORT);
         toast.show();
     }
 
     /*ToDo: To display a progress dialog with text message*/
-    public static void OpenLoadingDialog(Context context, String message) {
+    public static void OpenLoadingDialog(@NonNull Context context, String message) {
         dialog = new ProgressDialog(context);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         dialog.setMessage(message);
@@ -67,7 +68,7 @@ public class Utiliter {
     }
 
     /*ToDo: To update UI after language changed by user */
-    public static void UpdateLanguageResource(Context context, String language) {
+    public static void UpdateLanguageResource(@NonNull Context context, String language) {
         Locale locale = new Locale(language);
         Locale.setDefault(locale);
 
@@ -87,8 +88,8 @@ public class Utiliter {
     }
 
     /*ToDo: Check network state */
-    public static boolean isNetworkAvailable(Context ctx) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) ctx
+    public static boolean isNetworkAvailable(@NonNull Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         if ((connectivityManager
                 .getNetworkInfo(ConnectivityManager.TYPE_MOBILE) != null && connectivityManager
@@ -104,7 +105,7 @@ public class Utiliter {
     }
 
     /*ToDo: Get Current Date with format */
-    public static String getCurrentTimeStamp(String format) {
+    public static String getCurrentTimeStamp(@NonNull String format) {
         return new SimpleDateFormat(format).format(new Date());
     }
 
@@ -136,7 +137,7 @@ public class Utiliter {
     }
 
     /*ToDo: Convert Cursor To JsonArray*/
-    public static JSONArray cursorToJsonArray(Cursor cursor) {
+    public static JSONArray cursorToJsonArray(@NonNull Cursor cursor) {
 
         JSONArray resultSet = new JSONArray();
         cursor.moveToFirst();
@@ -161,19 +162,19 @@ public class Utiliter {
 
     }
 
-    private static void RefreshActivity(Context context) {
+    private static void RefreshActivity(@NonNull Context context) {
         Intent intent = ((Activity) context).getIntent();
         ((Activity) context).finish();
         context.startActivity(intent);
     }
 
     /*ToDo: Show Dialog Box */
-    public static void ShowDialogBox(Context context, String title, String message, boolean IsCancelable) {
+    public static void ShowDialogBox(@NonNull Context context, String title, String message, boolean IsCancelable) {
         ShowDialogBox(context, title, message, IsCancelable, null);
     }
 
     /*ToDo: Show Dialog Box With Positive and Negative Buttons*/
-    public static void ShowDialogBox(Context context, String title, String message, boolean IsCancelable, final IUtiliter.DialogButtonsClickListener dialogButtonsClickLitener) {
+    public static void ShowDialogBox(@NonNull Context context, String title, String message, boolean IsCancelable, final IUtiliter.DialogButtonsClickListener dialogButtonsClickLitener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setCancelable(IsCancelable);
         builder.setTitle(title);
@@ -191,8 +192,7 @@ public class Utiliter {
                     dialogButtonsClickLitener.OnNegativeButtonClick();
                 }
             });
-        }else
-        {
+        } else {
             builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
