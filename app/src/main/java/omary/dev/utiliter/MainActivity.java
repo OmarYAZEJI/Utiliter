@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import omary.dev.utiliter.Interfaces.IUtiliter;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -13,9 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void ShowDialog(View view) {
-        Utiliter.ShowLoading(this, "test");
+        Utiliter.OpenLoadingDialog(this, "test");
     }
 
     public void HideDialog(View view) {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ShowToast(View view) {
-        Utiliter.ShowToast(this, "Test");
+        Utiliter.Toast(this, "Test");
     }
 
     public void ShowErrorToast(View view) {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void UpdateResource(View view) {
-        Utiliter.updateResources(this, "tr");
+        Utiliter.UpdateLanguageResource(this, "tr");
     }
 
     public void DoNotify(View view) {
@@ -40,12 +41,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void IsNetWorkAvailable(View view) {
         if (Utiliter.isNetworkAvailable(this))
-            Utiliter.ShowToast(this, "Network is available");
+            Utiliter.Toast(this, "Network is available");
         else
-            Utiliter.ShowToast(this, "Not available");
+            Utiliter.Toast(this, "Not available");
     }
 
     public void TimeStamp(View view) {
-        Utiliter.ShowToast(this, Utiliter.getCurrentTimeStamp("MM//dd"));
+        Utiliter.Toast(this, Utiliter.getCurrentTimeStamp("MM//dd"));
+    }
+
+    public void ShowDialogBox(View view) {
+
+        Utiliter.ShowDialogBox(this, "title", "Message", true);
+
     }
 }
